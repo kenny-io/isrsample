@@ -1,0 +1,18 @@
+[build]
+command = "npm run build"
+publish = ".next"
+
+[dev]
+command = "npm run dev"
+
+[functions]
+directory = "netlify/functions"
+node_bundler = "esbuild"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+from = "/save"
+to = "/.netlify/functions/save"
+status = 200
